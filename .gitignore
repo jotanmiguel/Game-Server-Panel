@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.log
+
+# Virtualenv
+venv/
+.env
+.env.*
+
+# Docker
+*.pid
+*.tar
+*.bak
+*.swp
+*.swo
+.dockerignore
+docker-compose.override.yml
+
+# VSCode
+.vscode/
+
+# IDEs
+.idea/
+*.iml
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Node/npm (caso uses UI mais tarde)
+node_modules/
+*.lock
+
+# Coverage/test
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+coverage.xml
+
+# Cache
+*.sqlite3
+.cache/
+*.db
+
+# Jupyter (só se aplicável)
+.ipynb_checkpoints/
+
+# Migrations (caso uses alembic ou afins)
+migrations/
+
+# Custom
+servers/**/logs/
+servers/**/backups/

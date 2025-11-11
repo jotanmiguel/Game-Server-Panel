@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  api-gateway:
+    build:
+      context: ./services/api-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./services/api-gateway:/app
+    depends_on:
+      - server-manager
+      - template-service
+    networks:
+      - panelnet
+
+  server-manager:
+    build: ./services/server-manager
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./servers:/servers
+    networks:
+      - panelnet
+
+  template-service:
+    image: busybox
+    command: sleep 3600
+    networks:
+      - panelnet
+
+networks:
+  panelnet:
+    driver: bridge

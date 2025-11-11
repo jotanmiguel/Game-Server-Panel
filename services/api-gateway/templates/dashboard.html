@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Game Server Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #181818; color: #eee; padding: 2rem; }
+        h1 { color: #6cf; }
+        .server-list { margin-top: 2rem; }
+        .server-card {
+            border: 1px solid #555;
+            background: #222;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Game Server Dashboard</h1>
+
+    {% if servers %}
+    <div class="server-list">
+        {% for server in servers %}
+        <div class="server-card">
+            <strong>Server Name:</strong> {{ server.name }}<br>
+            <strong>Path:</strong> {{ server.path }}
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No servers found.</p>
+    {% endif %}
+</body>
+</html>
